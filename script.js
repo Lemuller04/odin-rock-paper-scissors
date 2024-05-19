@@ -73,3 +73,24 @@ function playRound(humanChoice = getHumanChoice(), computerChoice = getComputerC
         }
     }
 }
+
+function playGame() {
+    let roundsPlayed = 0;
+    humanScore = 0;
+    computerScore = 0;
+    
+    while (roundsPlayed < rounds) {
+        playRound();
+        roundsPlayed++;
+    }
+    console.clear()
+    if (humanScore === computerScore) {
+        console.log(`Game ended. It's a tie!\nFinal score: ${humanScore} to ${computerScore}`);
+    } else if (humanScore > computerScore) {
+        console.log(`Game ended. Congratulations, you win!\nFinal score: ${humanScore} to ${computerScore}`);
+    } else {
+        console.log(`Game ended. You lose, better luck next time!\nFinal score: ${computerScore} to ${humanScore}`);
+    }
+}
+
+playGame();
