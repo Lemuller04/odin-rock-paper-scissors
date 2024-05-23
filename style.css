@@ -10,8 +10,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 12px;
+    font-size: 32px;
+}
+
+p {
+    color: rgb(202, 202, 202);
+}
+
+button {
+    font-size: 32px;
+    padding: 8px 24px;
 }
 
 .buttons-container {
     display: flex;
+    gap: 12px;
+}
+
+.score-container {
+    text-align: center;
 }
