@@ -28,7 +28,7 @@ function playRound(humanChoice) {
         computerScore++;
     }
 
-    scoresText.textContent = `The scores is ${humanScore} to ${computerScore}`;
+    scoresText.textContent = `Your score: ${humanScore} --- computer score: ${computerScore}`;
 
     scores.appendChild(winnerText);
     scores.appendChild(scoresText);
