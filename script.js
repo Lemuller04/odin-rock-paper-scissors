@@ -1,14 +1,14 @@
 const CHOICES = ["Rock", "Paper", "Scissor"];
 let humanScore = 0;
 let computerScore = 0;
-let buttons = document.querySelectorAll("button");
+let buttons = document.querySelectorAll(".button");
 let scores = document.querySelector(".score-container");
 let computerChoice;
 let winnerText = document.createElement("p");
 let scoresText = document.createElement("p");
 
 buttons.forEach((button) => button.onclick = () => {
-    playRound(button.textContent);
+    playRound(formatHumanChoice(button.textContent));
 });
 
 function playRound(humanChoice) {
@@ -28,7 +28,7 @@ function playRound(humanChoice) {
         computerScore++;
     }
 
-    scoresText.textContent = `Your score: ${humanScore} --- computer score: ${computerScore}`;
+    scoresText.textContent = `Your score: ${humanScore} x computer score: ${computerScore}`;
 
     scores.appendChild(winnerText);
     scores.appendChild(scoresText);
@@ -38,5 +38,15 @@ function playRound(humanChoice) {
         winnerText.textContent = `You ${((humanScore > computerScore ? "win" : "lose"))}`;
         humanScore = 0;
         computerScore = 0;
+    }
+}
+
+function formatHumanChoice(inputToFormat) {
+    if (inputToFormat == "✊") {
+        return "Rock";
+    } else if (inputToFormat == "🖐") {
+        return "Paper";
+    } else if (inputToFormat == "✌") {
+        return "Scissor";
     }
 }
