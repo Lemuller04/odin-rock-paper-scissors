@@ -37,12 +37,20 @@ button {
     border-radius: 5px;
 }
 
+p.button {
+    font-size: 64px;
+}
+
+p.button:hover {
+    cursor: pointer;
+}
+
 .buttons-container {
     display: flex;
-    gap: 12px;
+    gap: 16px;
 }
 
 .score-container {
     text-align: center;
-    font-size: 16px;
+    font-size: 24px;
 }
