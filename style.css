@@ -24,11 +24,17 @@ header {
 main {
     background-color: rgb(92, 26, 26);
     border-radius: 0 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
 }
 
 button {
     font-size: 32px;
     padding: 8px 24px;
+    border-radius: 5px;
 }
 
 .buttons-container {
@@ -38,4 +44,5 @@ button {
 
 .score-container {
     text-align: center;
+    font-size: 16px;
 }
