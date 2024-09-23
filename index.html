@@ -1,23 +1,36 @@
 <!DOCTYPE html>
+
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Rock Paper Scissor</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Odin Rock, Paper, Scissor</h1>
-    </header>
-    <main>
-        <div class="buttons-container">
-            <p class="button">&#9994</p>
-            <p class="button">&#128400</p>
-            <p class="button">&#9996</p>
-        </div>
-        <div class="score-container"></div>
-    </main>
-    <script src="script.js"></script>
-</body>
+    <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rock, Paper, Scissors</title>
+	<link href="styles.css" rel="stylesheet">
+    </head>
+    <body>
+	<header>
+	    <p>Rock, Paper, Scissors Game</p>
+	</header>
+
+	<main>
+	    <p>It's you versus the computer, who is more lucky?<br>First one to score 5 points wins</p>
+	    <div id="emojis-container">
+		<p class="emoji" id="rock">&#9994;</p>
+		<p class="emoji" id="paper">&#9995;</p>
+		<p class="emoji" id="scissors">&#9996;</p>
+	    </div>
+	    <div>
+		<ul>
+		    <li id="result">Result...</li>
+		    <li id="human-score">You: 0</li>
+		    <li id="computer-score">Computer: 0</li>
+	    </div>
+	</main>
+
+	<footer>
+	    <p>Copyright &copy; <a href="https://github.com/lemuller04">Lemuller04</a>, for <a href="https://theodinproject.com">The Odin Project</a>
+	</footer>
+
+	<script src="script.js"></script>
+    </body>
 </html>
