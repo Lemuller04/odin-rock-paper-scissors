@@ -13,11 +13,11 @@ buttons.forEach((button) => button.onclick = () => {
     let computerPlay = plays[Math.floor(Math.random() * plays.length)];
 
     if (state === "restart") {
-	[humanScore, computerScore] = [0, 0];
-	humanScoreTextElement.textContent = `You: ${humanScore}`;
-	computerScoreTextElement.textContent = `Computer: ${computerScore}`;
-	[humanPlay, computerPlay] = ["rock", "rock"];
-	state = "running";
+		[humanScore, computerScore] = [0, 0];
+		humanScoreTextElement.textContent = `You: ${humanScore}`;
+		computerScoreTextElement.textContent = `Computer: ${computerScore}`;
+		[humanPlay, computerPlay] = ["rock", "rock"];
+		state = "restarted";
     }
 
     console.log(`Human: ${humanPlay} - Computer: ${computerPlay}`);
@@ -26,42 +26,47 @@ buttons.forEach((button) => button.onclick = () => {
 
     // Updates html texts according to winner
     if (roundWinner === "human") {
-	humanScore++;
-	resultTextElement.textContent = `You win! ${humanPlay} beats ${computerPlay}`;
-	humanScoreTextElement.textContent = `You: ${humanScore}`;
+		humanScore++;
+		resultTextElement.textContent = `You win! ${humanPlay} beats ${computerPlay}`;
+		humanScoreTextElement.textContent = `You: ${humanScore}`;
     } else if (roundWinner === "computer") {
-	computerScore++;
-	resultTextElement.textContent = `You lost! ${computerPlay} beats ${humanPlay}`;
-	computerScoreTextElement.textContent = `Computer: ${computerScore}`;
+		computerScore++;
+		resultTextElement.textContent = `You lost! ${computerPlay} beats ${humanPlay}`;
+		computerScoreTextElement.textContent = `Computer: ${computerScore}`;
     } else {
-	resultTextElement.textContent = `It's a tie! No one scores`
+		resultTextElement.textContent = `It's a tie! No one scores`
     }
 
     if (humanScore === winnerScore || computerScore === winnerScore) {
-	state = "ended";
+		state = "ended";
     }
 
     if (state === "ended") {
-	if (humanScore === winnerScore) {
-	    resultTextElement.textContent = `Congratulation, you won!`
-	    humanScoreTextElement.textContent = `You where the first one to score 5 points.`;
-	} else {
-	    resultTextElement.textContent = `You lost! Better luck next time.`
-	    humanScoreTextElement.textContent = `The computer where the first one to score 5 points.`;
-	}
-	computerScoreTextElement.textContent = `Click rock, paper or scissors to restart.`;
-	state = "restart";
+		if (humanScore === winnerScore) {
+			resultTextElement.textContent = `Congratulation, you won!`
+			humanScoreTextElement.textContent = `You where the first one to score 5 points.`;
+		} else {
+			resultTextElement.textContent = `You lost! Better luck next time.`
+			humanScoreTextElement.textContent = `The computer where the first one to score 5 points.`;
+		}
+		computerScoreTextElement.textContent = `Click rock, paper or scissors to restart.`;
+		state = "restart";
     }
+
+	if (state === "restarted") {
+		resultTextElement.textContent = `Result...`;
+		state = "running";
+	}
 });
 
 function roundResult(p1, p2) {
     if (p1 === p2) { // If it's a tie
-	return "tied";
+		return "tied";
     }else if (p1 === "rock" && p2 === "scissors" || // Else if human won round
         p1 === "paper" && p2 === "rock"    ||
         p1 === "scissors" && p2 === "paper") {
-	return "human";
+		return "human";
     } else { // Else computer won round
-	return "computer";
+		return "computer";
     }
 }
