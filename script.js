@@ -18,6 +18,7 @@ buttons.forEach(
         resetVariables();
         state = "restarted";
       }
+
       console.log(`Human: ${humanPlay} - Computer: ${computerPlay}`);
       let roundWinner = getRoundResult(humanPlay, computerPlay);
       console.log(roundWinner);
