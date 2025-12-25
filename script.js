@@ -42,11 +42,11 @@ buttons.forEach(
 
       if (state === "ended") {
         if (humanScore === winnerScore) {
-          resultTextElement.textContent = `Congratulation, you won!`;
-          humanScoreTextElement.textContent = `You where the first one to score 5 points.`;
+          resultTextElement.textContent = `Congratulations, you won!`;
+          humanScoreTextElement.textContent = `You were the first one to score 5 points.`;
         } else {
           resultTextElement.textContent = `You lost! Better luck next time.`;
-          humanScoreTextElement.textContent = `The computer where the first one to score 5 points.`;
+          humanScoreTextElement.textContent = `The computer was the first one to score 5 points.`;
         }
         computerScoreTextElement.textContent = `Click rock, paper or scissors to restart.`;
         state = "restart";
